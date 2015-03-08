@@ -1,0 +1,55 @@
+﻿@model StudentInformation.VModel.StudentVModel
+
+@{
+    ViewBag.Title = "InsertStudent";
+}
+
+<h2>Insert Student</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Student.Name)</td>
+            <td>@Html.TextBoxFor(m=>m.Student.Name)</td>
+            <td>@Html.ValidationMessageFor(m=>m.Student.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Student.FatherName)</td>
+            <td>@Html.TextBoxFor(m=>m.Student.FatherName)</td>
+            <td>@Html.ValidationMessageFor(m=>m.Student.FatherName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Student.Address)</td>
+            <td>@Html.TextBoxFor(m=>m.Student.Address)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Student.Class)</td>
+            <td>@Html.TextBoxFor(m=>m.Student.Class)</td>
+            <td>@Html.ValidationMessageFor(m=>m.Student.Class)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Student.Roll)</td>
+            <td>@Html.TextBoxFor(m=>m.Student.Roll)</td>
+            <td>@Html.ValidationMessageFor(m=>m.Student.Roll)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Insert"/></td>
+            <td></td>
+        </tr>
+
+    </table>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
